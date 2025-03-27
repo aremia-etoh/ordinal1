@@ -52,7 +52,7 @@ function buyIncrementor() {
 function maxIncrementors(max = null) {
   if (game.prestigePoints.gte(getBaseReductionCost(game.baseReductions)) && game.options.disableMaxWhenReductable) return
 
-  const stuff = calculateMax(nD(2), nD(2), game.incrementors.amount, game.prestigePoints, D.pow(1.1, game.scaling[0].amount), calcScalingCap(), max)
+  const stuff = calculateMax(nD(10), nD(2), game.incrementors.amount, game.prestigePoints, D.pow(1.1, game.scaling[0].amount), calcScalingCap(), max)
 
   if (stuff.amount.gte(1)) {
     game.incrementors.amount = game.incrementors.amount.plus(stuff.amount)
