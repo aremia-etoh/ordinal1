@@ -14,8 +14,8 @@ function mtxUpg(n) {
       }
       break
     case 2:
-      if (game.mtx.money >= 30) {
-        game.mtx.money -= 30
+      if (game.mtx.money >= 5) {
+        game.mtx.money -= 5
         
         if (game.ord.b > 19) game.ord.b = Math.floor(game.ord.b * 0.95)
         else game.mtx.doubleIncs = true
