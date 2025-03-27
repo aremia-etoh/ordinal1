@@ -2,7 +2,7 @@
 class Game {
   constructor() {
     // ord
-    this.ord = new Ordinal(1, 100)
+    this.ord = new Ordinal(1, 99)
 
     // prestige
     this.prestigePoints = nD(0)
