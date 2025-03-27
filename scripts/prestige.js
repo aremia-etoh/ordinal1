@@ -11,7 +11,7 @@ function prestige() {
 }
 
 function getBaseReductionCost(n) {
-  if (game.ord.b <= 8) return nD(Infinity) // you cant reduce the base any further
+  if (game.ord.b <= 7) return nD(Infinity) // you cant reduce the base any further
 
   const ppGagn = [nD(10), nD(30), nD(100), nD(500), nD(2.5e3), nD(1e4), nD(5e4), nD(2e5), nD(7.5e5), nD(2e6), nD(6e6), nD(2e7)]
 
