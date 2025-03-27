@@ -13,28 +13,28 @@ function prestige() {
 function getBaseReductionCost(n) {
   if (game.ord.b <= 8) return nD(Infinity) // you cant reduce the base any further
 
-  const ppGagn = [nD(100), nD(300), nD(1000), nD(5e3), nD(2.5e4), nD(1e5), nD(5e5), nD(2e6), nD(7.5e6), nD(2e7), nD(6e7), nD(2e8)]
+  const ppGagn = [nD(10), nD(30), nD(100), nD(500), nD(2.5e3), nD(1e4), nD(5e4), nD(2e5), nD(7.5e5), nD(2e6), nD(6e6), nD(2e7)]
 
   if (ppGagn[n] !== undefined) return ppGagn[n] // values
 
   const n2electricBoogaloo = nD(n - ppGagn.length)
 
 	// spaghetti zone
-  if (n < 23) return nD(5e8).times(D.pow(4, n2electricBoogaloo.pow(1.25)))
-  if (n < 28) return getBaseReductionCost(22).pow(D.pow(1.125, n.minus(22)))
-  if (n < 35) return getBaseReductionCost(nD(27)).pow(D.pow(1.1, n.minus(27)))
-  if (n < 40) return nD(1e98).pow(D.pow(1.05, n.minus(35)))
-  if (n < 44) return nD(1e230).pow(D.pow(1.075, n.minus(40)))
-  if (n < 56) return nD("1e400").pow(D.pow(1.075, n.minus(44)))
-  if (n < 62) return nD("1e1200").pow(D.pow(1.1, n.minus(56)))
-	if (n < 65) return nD("1e2050").pow(D.pow(1.1, n.minus(62)))
-	if (n < 69) return nD("1e2660").pow(D.pow(1.07, n.minus(65)))
-	if (n < 73) return nD("1e4000").pow(D.pow(1.1, n.minus(69)))
-	if (n < 77) return nD("1e24000").pow(D.pow(1.875, n.minus(73)))
-	if (n < 79) return nD("1e240000").pow(D.pow(1.35, n.minus(77)))
-	if (n < 82) return nD("e2.88e6").pow(D.pow(1.84, n.minus(79)))
-	if (n < 85) return nD("e1.27e7").pow(D.pow(1.42, n.minus(82).pow(0.79)))
-	if (n < 86) return nD("e3.4e7")
+  if (n < 24) return nD(5e8).times(D.pow(4, n2electricBoogaloo.pow(1.25)))
+  if (n < 29) return getBaseReductionCost(22).pow(D.pow(1.125, n.minus(22)))
+  if (n < 36) return getBaseReductionCost(nD(27)).pow(D.pow(1.1, n.minus(27)))
+  if (n < 41) return nD(1e98).pow(D.pow(1.05, n.minus(35)))
+  if (n < 45) return nD(1e230).pow(D.pow(1.075, n.minus(40)))
+  if (n < 57) return nD("1e400").pow(D.pow(1.075, n.minus(44)))
+  if (n < 63) return nD("1e1200").pow(D.pow(1.1, n.minus(56)))
+	if (n < 66) return nD("1e2050").pow(D.pow(1.1, n.minus(62)))
+	if (n < 70) return nD("1e2660").pow(D.pow(1.07, n.minus(65)))
+	if (n < 74) return nD("1e4000").pow(D.pow(1.1, n.minus(69)))
+	if (n < 78) return nD("1e24000").pow(D.pow(1.875, n.minus(73)))
+	if (n < 80) return nD("1e240000").pow(D.pow(1.35, n.minus(77)))
+	if (n < 83) return nD("e2.88e6").pow(D.pow(1.84, n.minus(79)))
+	if (n < 86) return nD("e1.27e7").pow(D.pow(1.42, n.minus(82).pow(0.79)))
+	if (n < 87) return nD("e3.4e7")
 	if (n < 89) return nD("e6e8").pow(D.pow(2.45, n.minus(86).pow(0.625)))
 	return nD("e1.06e11")
 }
