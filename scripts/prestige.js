@@ -11,18 +11,16 @@ function prestige() {
 }
 
 function getBaseReductionCost(n) {
-  if (game.ord.b <= 10) return nD(Infinity) // you cant reduce the base any further
+  if (game.ord.b <= 9) return nD(Infinity) // you cant reduce the base any further
 
-  const ppGagn = [nD(100), nD(1000), nD(1e4), nD(5e4), nD(2.5e5), nD(1e6), nD(5e6), nD(2e7), nD(7.5e7), nD(2e8), nD(6e8), nD(2e9)]
+  const ppGagn = [nD(100), nD(300), nD(1000), nD(5e3), nD(2.5e4), nD(1e5), nD(5e5), nD(2e6), nD(7.5e6), nD(2e7), nD(6e7), nD(2e8)]
 
   if (ppGagn[n] !== undefined) return ppGagn[n] // values
 
   const n2electricBoogaloo = nD(n - ppGagn.length)
 
 	// spaghetti zone
-	// i really need to just shove 90 values into pp gagn instead of this mess
-	// so, todo, ig
-  if (n < 23) return nD(5e9).times(D.pow(4, n2electricBoogaloo.pow(1.25)))
+  if (n < 23) return nD(5e8).times(D.pow(4, n2electricBoogaloo.pow(1.25)))
   if (n < 28) return getBaseReductionCost(22).pow(D.pow(1.125, n.minus(22)))
   if (n < 35) return getBaseReductionCost(nD(27)).pow(D.pow(1.1, n.minus(27)))
   if (n < 40) return nD(1e98).pow(D.pow(1.05, n.minus(35)))
