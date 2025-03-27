@@ -1,6 +1,6 @@
 "use strict"
 const setIncrementorCost = () => {
-  const mult = D.pow(10, nD(2).log10().div(getScalingEffect(-1))).max(calcScalingCap())
+  const mult = D.pow(3, nD(2).log10().div(getScalingEffect(-1))).max(calcScalingCap())
   
   game.incrementors.cost = D.pow(mult, game.incrementors.amount).times(10)
 }
